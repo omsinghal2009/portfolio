@@ -1,123 +1,102 @@
-import React from 'react';
-import { GraduationCap, BookOpen, Calendar, MapPin, CheckCircle, Code, Brain, Layout, GitBranch, Cpu, Calculator } from 'lucide-react';
-import { education } from '../data/portfolioData';
-
-const areaIcons = [
-  <Code className="w-5 h-5 text-indigo-400" />,
-  <Brain className="w-5 h-5 text-purple-400" />,
-  <Layout className="w-5 h-5 text-cyan-400" />,
-  <GitBranch className="w-5 h-5 text-emerald-400" />,
-  <Cpu className="w-5 h-5 text-amber-400" />,
-  <Calculator className="w-5 h-5 text-rose-400" />,
-];
+import { GraduationCap, Calendar, BookOpen, Award } from 'lucide-react';
+import SectionHeading from './SectionHeading';
 
 export default function Education() {
   return (
-    <section id="education" className="py-24 relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-indigo-600/10 rounded-full blur-[140px] pointer-events-none -z-10" />
+    <section id="education" className="py-24 lg:py-32 relative">
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent-600/5 rounded-full blur-[120px]" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-3">
-            <GraduationCap className="w-3.5 h-3.5" />
-            <span>Academic Journey</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-white tracking-tight mb-4">
-            My <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-400">Education</span>
-          </h2>
-          <p className="text-slate-400 text-base sm:text-lg">
-            Building rigorous theoretical fundamentals and applying them directly to real-world code.
-          </p>
-        </div>
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeading
+          subtitle="My Academic Journey"
+          title="Education"
+          description="Building a strong foundation in Computer Science & Engineering"
+        />
 
-        {/* Main Degree Card */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <div className="relative p-6 sm:p-10 rounded-3xl bg-gradient-to-br from-slate-900/90 via-slate-900/60 to-slate-950/90 border border-indigo-500/30 shadow-xl shadow-indigo-950/20 backdrop-blur-md overflow-hidden">
-            {/* Corner ambient glow */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="mt-16 max-w-3xl mx-auto">
+          {/* Timeline connector */}
+          <div className="relative">
+            {/* Vertical line */}
+            <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary-500 via-accent-500 to-transparent hidden sm:block" />
 
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-slate-800/80">
-              <div className="flex items-start gap-4">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-indigo-600 to-cyan-500 p-[2px] shrink-0 shadow-lg shadow-indigo-600/20">
-                  <div className="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center">
-                    <GraduationCap className="w-7 h-7 text-indigo-400" />
-                  </div>
-                </div>
-                <div>
-                  <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-semibold mb-2">
-                    {education.badge}
-                  </div>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold font-display text-white">
-                    {education.degree}
-                  </h3>
-                  <p className="text-lg font-semibold text-cyan-400 mt-1">
-                    {education.institution}
-                  </p>
-                </div>
+            {/* Education Card */}
+            <div className="relative sm:pl-20">
+              {/* Timeline dot */}
+              <div className="absolute left-5 top-8 w-6 h-6 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 ring-4 ring-surface-950 hidden sm:flex items-center justify-center z-10">
+                <div className="w-2 h-2 rounded-full bg-white" />
               </div>
 
-              <div className="flex flex-col sm:flex-row md:flex-col items-start md:items-end gap-2 text-xs sm:text-sm text-slate-400">
-                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800/60 border border-slate-700/60 text-slate-300 font-medium">
-                  <Calendar className="w-4 h-4 text-indigo-400" />
-                  <span>{education.duration}</span>
+              <div className="glass rounded-2xl p-6 sm:p-8 glow-hover group hover:border-primary-500/30 transition-all duration-500">
+                {/* Header */}
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
+                  <div>
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500/20 to-accent-500/20 flex items-center justify-center">
+                        <GraduationCap className="text-primary-400" size={24} />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white font-[family-name:var(--font-heading)]">
+                          Bachelor of Technology (B.Tech)
+                        </h3>
+                        <p className="text-primary-400 font-medium">
+                          JECRC University, Jaipur
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-primary-500/10 text-primary-400 text-sm font-medium shrink-0">
+                    <Calendar size={14} />
+                    Currently Pursuing
+                  </span>
                 </div>
-                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800/60 border border-slate-700/60 text-slate-300 font-medium">
-                  <MapPin className="w-4 h-4 text-cyan-400" />
-                  <span>{education.location}</span>
+
+                {/* Details */}
+                <div className="space-y-4">
+                  <p className="text-surface-200/60 leading-relaxed">
+                    Pursuing a comprehensive degree in engineering with a focus on modern
+                    technologies. Developing both theoretical knowledge and hands-on practical
+                    skills through coursework and personal projects.
+                  </p>
+
+                  {/* Learning Areas */}
+                  <div>
+                    <h4 className="text-sm font-semibold text-white mb-3 flex items-center gap-2">
+                      <BookOpen size={16} className="text-primary-400" />
+                      Relevant Learning Areas
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {[
+                        'Data Structures & Algorithms',
+                        'Artificial Intelligence',
+                        'Web Development',
+                        'Python Programming',
+                        'Database Management',
+                        'Computer Networks',
+                        'Object-Oriented Programming',
+                        'Digital Productivity',
+                      ].map((area) => (
+                        <span
+                          key={area}
+                          className="px-3 py-1.5 rounded-lg bg-white/5 text-surface-200/70 text-xs sm:text-sm border border-white/5 hover:border-primary-500/30 hover:text-primary-400 transition-all duration-300"
+                        >
+                          {area}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Highlights */}
+                  <div className="flex items-center gap-2 pt-2">
+                    <Award size={16} className="text-accent-400" />
+                    <span className="text-sm text-surface-200/60">
+                      Active learner — consistently exploring new technologies & building projects
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <p className="pt-6 text-slate-300 text-sm sm:text-base leading-relaxed">
-              {education.description}
-            </p>
           </div>
         </div>
-
-        {/* Relevant Learning Areas */}
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center justify-between mb-8">
-            <div>
-              <h3 className="text-xl sm:text-2xl font-bold font-display text-white flex items-center gap-2">
-                <BookOpen className="w-5 h-5 text-indigo-400" />
-                <span>Relevant Learning Areas</span>
-              </h3>
-              <p className="text-slate-400 text-sm mt-1">
-                Core subjects and focus areas during my B.Tech curriculum and self-driven engineering studies.
-              </p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {education.relevantAreas.map((area, idx) => (
-              <div
-                key={idx}
-                className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-indigo-500/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 group flex flex-col justify-between"
-              >
-                <div>
-                  <div className="w-10 h-10 rounded-xl bg-slate-800/80 border border-slate-700/80 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-200">
-                    {areaIcons[idx % areaIcons.length]}
-                  </div>
-                  <h4 className="text-base font-bold font-display text-white group-hover:text-indigo-300 transition-colors mb-2">
-                    {area.title}
-                  </h4>
-                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                    {area.description}
-                  </p>
-                </div>
-
-                <div className="mt-4 pt-4 border-t border-slate-800/60 flex items-center gap-1.5 text-xs font-medium text-indigo-400">
-                  <CheckCircle className="w-3.5 h-3.5" />
-                  <span>Curriculum & Practical Focus</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
       </div>
     </section>
   );
